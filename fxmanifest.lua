@@ -18,3 +18,8 @@ client_scripts {
     "@PolyZone/client.lua",
     "client/*",
 }
+
+dependencies {
+    "ox_lib",
+    "PolyZone",
+}
