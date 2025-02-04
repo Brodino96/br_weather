@@ -3,7 +3,8 @@ game "gta5"
 lua54 "yes"
 
 author "Brodino"
-description "Clima a zone"
+description "Dynamic zone weather for FiveM"
+version "1.0"
 
 shared_scripts {
     "@ox_lib/init.lua",
