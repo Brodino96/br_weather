@@ -17,6 +17,11 @@ end
 --------------------- # --------------------- # --------------------- # ---------------------
 
 local function createZones()
+
+    if #allZones > 0 then
+        return
+    end
+
     for _, i in pairs(Config.zones) do
         local currentZone = PolyZone:Create(
             i.coords, {
@@ -74,7 +79,9 @@ AddEventHandler("playerSpawned", createZones)
 
 RegisterNetEvent("onResourceStart")
 AddEventHandler("onResourceStart", function (name)
-    if name ~= GetCurrentResourceName() then return end
+    if name ~= GetCurrentResourceName() or not PlayerPedId() then
+        return
+    end
     createZones()
 end)
 
